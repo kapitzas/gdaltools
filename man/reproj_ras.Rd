@@ -4,7 +4,7 @@
 \alias{reproj_ras}
 \title{Reproject raster file}
 \usage{
-reproj_ras(input_file, output_file, crs, res, ext)
+reproj_ras(input_file, output_file, crs, res, ext, method)
 }
 \arguments{
 \item{input_file}{Raster file, including path, to reproject}
@@ -16,6 +16,8 @@ reproj_ras(input_file, output_file, crs, res, ext)
 \item{res}{Resolution value}
 
 \item{ext}{Vector of four values: xmin, xmax, ymin, ymax}
+
+\item{method}{Resampling method. "near" for categorical data, "bilinear" for continuous data. Other methods are possible, see \url{https://www.gdal.org/gdalwarp.html}}
 }
 \value{
 Saved output file

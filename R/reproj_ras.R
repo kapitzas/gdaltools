@@ -5,6 +5,7 @@
 #' @param crs Target reprojection
 #' @param res Resolution value
 #' @param ext Vector of four values: xmin, xmax, ymin, ymax
+#' @param method Resampling method. "near" for categorical data, "bilinear" for continuous data. Other methods are possible, see \url{https://www.gdal.org/gdalwarp.html}
 #'
 #' @return Saved output file
 #' @export
@@ -16,10 +17,11 @@
 #'           res = 1000,
 #'           ext = c(-58000, 764000, 5661000, 6224000))
 #' }
-reproj_ras <- function (input_file, output_file, crs, res, ext) {
+reproj_ras <- function (input_file, output_file, crs, res, ext, method) {
 
   system(paste("gdalwarp -overwrite -tr",
-               res, res, "-r bilinear -t_srs",
+               res, res, "-r",
+               method ,"-t_srs",
                paste0("'", crs, "'"),
                "-te", ext[1], ext[3], ext[2], ext[4],
                paste0("'", input_file, "'"),
