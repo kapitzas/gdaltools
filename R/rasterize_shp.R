@@ -5,7 +5,7 @@
 #' @param res Resolution value
 #' @param ext Vector of four values: xmin, xmax, ymin, ymax
 #' @param attribute by which to rasterize. Defaults to null
-#'
+#' @param no_data no data value to be assigned (default is `no_data = 0`).
 #' @return Saved output file
 #' @export
 #'

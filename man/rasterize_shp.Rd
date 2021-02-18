@@ -16,6 +16,8 @@ rasterize_shp(input_file, output_file, res, ext, attribute = NULL, no_data = 0)
 \item{ext}{Vector of four values: xmin, xmax, ymin, ymax}
 
 \item{attribute}{by which to rasterize. Defaults to null}
+
+\item{no_data}{no data value to be assigned (default is `no_data = 0`).}
 }
 \value{
 Saved output file
