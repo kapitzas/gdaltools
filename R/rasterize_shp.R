@@ -16,12 +16,13 @@
 #'              ext = c(-58000, 764000, 5661000, 6224000),
 #'              attribute = "size")
 #' }
-rasterize_shp <- function (input_file, output_file, res, ext, attribute = NULL) {
+rasterize_shp <- function (input_file, output_file, res, ext, attribute = NULL, no_data = 0) {
 
   if (is.null(attribute)) {
     system(paste("gdal_rasterize -burn 1 -tr",
                  res, res, "-te",
                  ext[1], ext[3], ext[2], ext[4],
+                 "-a_nodata", no_data,
                  paste0("'", input_file, "'"),
                  paste0("'", output_file, "'")
                  ))
@@ -32,6 +33,7 @@ rasterize_shp <- function (input_file, output_file, res, ext, attribute = NULL) 
                  attribute, "-tr",
                  res, res, "-te",
                  ext[1], ext[3], ext[2], ext[4],
+                 "-a_nodata", no_data,
                  paste0("'", input_file, "'"),
                  paste0("'", output_file, "'")
                  ))

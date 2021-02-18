@@ -4,7 +4,7 @@
 \alias{rasterize_shp}
 \title{Convert shapefile to raster}
 \usage{
-rasterize_shp(input_file, output_file, res, ext, attribute = NULL)
+rasterize_shp(input_file, output_file, res, ext, attribute = NULL, no_data = 0)
 }
 \arguments{
 \item{input_file}{Shapefile file, including path, to convert to raster}
