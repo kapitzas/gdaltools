@@ -12,9 +12,10 @@
 #'
 #' @examples
 #' \dontrun{
-#' reproj_ras('my_path/temp.tif', 'my_path/reproj_temp.tif',
+#' aggregate_ras('my_path/temp.tif', 'my_path/reproj_temp.tif',
 #'           crs = '+proj=utm +zone=55 +south +ellps=GRS80 +units=m +no_defs',
 #'           res = 1000,
+#'           method = "average",
 #'           ext = c(-58000, 764000, 5661000, 6224000))
 #' }
 aggregate_ras <- function (input_file, output_file, crs, res, ext, method) {
